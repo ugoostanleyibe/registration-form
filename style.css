@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+input {
+    color: hsl(249, 10%, 26%) !important;
+    border: 1px solid hsl(246, 25%, 77%) !important;
+    background-size: 20px 20px !important;
+    font-weight: bold !important;
+}
+
+input.error {
+    color: hsl(0, 100%, 74%) !important;
+    border: 1px solid hsl(0, 100%, 74%) !important;
+    background-image: url('images/icon-error.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: 94% !important;
+}
+
+input:focus {
+    border: 2px solid hsl(249, 10%, 26%) !important;
+}
+
+input::placeholder {
+    font-weight: 600 !important;
+    color: #888888 !important;
+}
+
+form label.error {
+    color: hsl(0, 100%, 74%) !important;
+    font-size: 0.64rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 8px;
+    float: right;
+}
+
+.border-error {
+    border-color: hsl(0, 100%, 74%);
+}
+
+.text-primary-red {
+    color: hsl(0, 100%, 74%);
+}
+
+.text-transparent-white {
+    color: hsl(0, 0%, 100%, 0.75);
+}
+
+.bg-primary-green:hover {
+    background-color: hsl(154, 59%, 60%);
+}
+
+.bg-primary-green {
+    background-color: hsl(154, 59%, 51%);
+}
+
+.bg-primary-blue {
+    background-color: hsl(248, 32%, 49%);
+}
+
+.bg-primary-red {
+    background-color: hsl(0, 100%, 74%);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

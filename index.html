@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+  <link rel="shortcut icon" href="images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>Registration Form</title>
+</head>
+
+<body class="bg-[url('images/bg-intro-mobile.png')] xl:bg-[url('images/bg-intro-desktop.png')] bg-fixed bg-primary-red w-screen min-h-screen xl:h-screen px-6 py-16 md:px-44 xl:px-40 xl:py-0">
+  <main class="flex flex-col xl:flex-row xl:justify-between space-y-16 xl:space-y-0 xl:space-x-8 w-full h-full">
+    <section class="flex flex-col justify-center xl:w-[48%]">
+      <h1 class="font-bold text-center xl:text-start text-white text-5xl">
+        Learn to code by watching others
+      </h1>
+      <p class="font-medium text-center xl:text-start text-transparent-white mt-8">
+        See how experienced developers solve problems in real-time. Watching
+        scripted tutorials is great, but understanding how developers think
+        is invaluable.
+      </p>
+    </section>
+    <section class="flex flex-col justify-center xl:w-[48%]">
+      <h1 class="cursor-default bg-primary-blue drop-shadow-[0_6px_0px_rgba(0,0,0,0.16)] text-center rounded-lg text-white w-full py-4">
+        <strong>Try it free 7 days</strong> then <br class="md:hidden"> $20/mo. thereafter
+      </h1>
+      <form class="bg-white drop-shadow-[0_6px_0px_rgba(0,0,0,0.16)] rounded-lg text-white w-full p-6 xl:p-10 mt-6">
+        <input type="text" name="firstName" placeholder="First Name" class="focus:ring-0 rounded-md w-full px-6 xl:px-8 py-3">
+        <input type="text" name="lastName" placeholder="Last Name" class="focus:ring-0 rounded-md w-full px-6 xl:px-8 py-3 mt-5">
+        <input type="email" name="email" placeholder="Email Address" class="focus:ring-0 rounded-md w-full px-6 xl:px-8 py-3 mt-5">
+        <input type="password" name="password" placeholder="Password" class="focus:ring-0 rounded-md w-full px-6 xl:px-8 py-3 mt-5">
+        <button class="bg-primary-green rounded-md text-center uppercase w-full py-3 mt-5">
+          Claim Your Free Trial
+        </button>
+        <p class="text-center text-gray-300 text-[0.64rem] mt-4">
+          By clicking the button, you are agreeing to <br class="md:hidden"> our&nbsp;
+          <a href="https://en.wikipedia.org/wiki/End-user_license_agreement" target="_blank" class="font-semibold text-primary-red">Terms and Services</a>
+        </p>
+      </form>
+    </section>
+  </main>
+  <script>
+    $('form').validate({
+      rules: {
+        firstName: {
+          normalizer: value => $.trim(value),
+          required: true
+        },
+        lastName: {
+          normalizer: value => $.trim(value),
+          required: true
+        },
+        password: {
+          normalizer: value => $.trim(value),
+          required: true
+        },
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        email: 'Looks like this is not an email',
+        firstName: 'First Name cannot be empty',
+        lastName: 'Last Name cannot be empty',
+        password: {
+          required: 'Password cannot be empty'
+        }
+      },
+      submitHandler: form => {
+        form.submit()
+      }
+    })
+  </script>
+</body>
+
+</html>
